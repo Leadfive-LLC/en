@@ -39,7 +39,9 @@ button: "8px",
 };
 </script>
 <style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
+.ri-home-4-fill::before { content: "\ee56"; }
+.ri-user-heart-fill::before { content: "\f0b5"; }
+.ri-team-fill::before { content: "\f0a9"; }
 .dot {
 height: 8px;
 width: 8px;
@@ -418,9 +420,12 @@ transform: translateX(26px);
 <!-- お客様の声 1 -->
 <div class="bg-white p-6 rounded-lg shadow-lg">
 <div class="flex items-start mb-4">
-<img src="https://via.placeholder.com/60" alt="お客様" class="w-12 h-12 rounded-full mr-4">
+<div class="w-12 h-12 rounded-full mr-4 bg-primary/10 flex items-center justify-center">
+<i class="ri-home-4-fill text-primary text-xl"></i>
+</div>
 <div>
-<h4 class="font-bold">木のぬくもり</h4>
+<h4 class="font-bold">🏠 田中様ご家族</h4>
+<p class="text-sm text-gray-500">大阪市在住</p>
 <div class="flex text-yellow-400 text-sm">
 <span>★★★★★</span>
 <span class="text-gray-500 ml-2">1か月前</span>
@@ -433,9 +438,12 @@ transform: translateX(26px);
 <!-- お客様の声 2 -->
 <div class="bg-white p-6 rounded-lg shadow-lg">
 <div class="flex items-start mb-4">
-<img src="https://via.placeholder.com/60" alt="お客様" class="w-12 h-12 rounded-full mr-4">
+<div class="w-12 h-12 rounded-full mr-4 bg-primary/10 flex items-center justify-center">
+<i class="ri-user-heart-fill text-primary text-xl"></i>
+</div>
 <div>
-<h4 class="font-bold">夢夢</h4>
+<h4 class="font-bold">👫 山本様ご夫婦</h4>
+<p class="text-sm text-gray-500">堀市在住</p>
 <div class="flex text-yellow-400 text-sm">
 <span>★★★★★</span>
 <span class="text-gray-500 ml-2">1か月前</span>
@@ -447,9 +455,12 @@ transform: translateX(26px);
 <!-- お客様の声 3 -->
 <div class="bg-white p-6 rounded-lg shadow-lg">
 <div class="flex items-start mb-4">
-<img src="https://via.placeholder.com/60" alt="お客様" class="w-12 h-12 rounded-full mr-4">
+<div class="w-12 h-12 rounded-full mr-4 bg-primary/10 flex items-center justify-center">
+<i class="ri-team-fill text-primary text-xl"></i>
+</div>
 <div>
-<h4 class="font-bold">建築家</h4>
+<h4 class="font-bold">👨‍👩‍👧‍👦 佐藤様ご家族</h4>
+<p class="text-sm text-gray-500">枚方市在住</p>
 <div class="flex text-yellow-400 text-sm">
 <span>★★★★★</span>
 <span class="text-gray-500 ml-2">2か月前</span>
@@ -489,18 +500,20 @@ transform: translateX(26px);
 </div>
 </div>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<div class="relative h-32 md:h-48 overflow-hidden rounded-lg shadow">
-<img src="images/ene-house/IMG_9798.jpg" alt="eneの家 外観" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="relative h-64 md:h-96 overflow-hidden rounded-lg shadow-lg">
+<img src="images/ene-house/IMG_9822.jpg" alt="eneの家 大窓からの景色" class="w-full h-full object-cover">
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+<h4 class="text-white font-bold">リビングから大窓の景色</h4>
+<p class="text-white text-sm opacity-90">開放的な窓から四季の移ろいを感じる空間</p>
 </div>
-<div class="relative h-32 md:h-48 overflow-hidden rounded-lg shadow">
-<img src="images/ene-house/kitchen-vanity.jpg" alt="eneの家 木の洗面所" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" style="object-position: center;">
 </div>
-<div class="relative h-32 md:h-48 overflow-hidden rounded-lg shadow">
-<img src="images/ene-house/IMG_9822.jpg" alt="eneの家 詳細" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+<div class="relative h-64 md:h-96 overflow-hidden rounded-lg shadow-lg">
+<img src="images/ene-house/IMG_2149.JPG" alt="eneの家 フローリング" class="w-full h-full object-cover">
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+<h4 class="text-white font-bold">美しい無垢フローリング</h4>
+<p class="text-white text-sm opacity-90">吉野材の温もりを足裏で感じる上質な床材</p>
 </div>
-<div class="relative h-32 md:h-48 overflow-hidden rounded-lg shadow">
-<img src="images/ene-house/IMG_2149.JPG" alt="eneの家 暖炉" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
 </div>
 </div>
 </div>
@@ -602,18 +615,13 @@ transform: translateX(26px);
 <span class="bg-primary text-white px-4 py-2 rounded-full text-sm">専門家推薦</span>
 </div>
 </div>
+<div class="flex justify-center">
+<div class="w-full max-w-lg">
+<img src="images/jutaku-kenchiku-taidan.jpg" alt="住宅建築 2025年2月号 対談" class="w-full rounded-lg shadow-lg mb-4" style="height: auto;">
 <div class="text-center">
-<img src="images/jutaku-kenchiku-taidan.jpg" alt="住宅建築 2025年2月号 対談" class="w-full max-w-md mx-auto rounded-lg shadow-lg mb-4" style="height: auto;">
 <h4 class="text-xl font-bold mb-2">住宅建築 2025年2月号</h4>
-<p class="text-gray-600 mb-4">「吉野の木で家をつくる」対談記事掲載</p>
-<div class="bg-gray-100 p-4 rounded-lg inline-block">
-<h5 class="font-bold text-sm mb-2">対談メンバー</h5>
-<ul class="text-sm space-y-1 text-left">
-<li>• 阪口勝行（阪口製材所）</li>
-<li>• 西浦敬雅（建築工房en）</li>
-<li>• 吉村理（吉村建築設計事務所）</li>
-</ul>
-<p class="text-xs text-gray-500 mt-3">吉野の木を活かした家づくりについて、専門家による対談が掲載されました</p>
+<p class="text-gray-600">「吉野の木で家をつくる」対談記事掲載</p>
+</div>
 </div>
 </div>
 </div>

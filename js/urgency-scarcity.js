@@ -123,12 +123,70 @@ class UrgencyScarcity {
       margin-right: auto;
     `;
     
+    // 7月のカレンダーを生成（日曜始まり）
+    const year = 2025;
+    const month = 7; // 7月
+    const firstDay = new Date(year, month - 1, 1).getDay(); // 7月1日の曜日（火曜日=2）
+    
+    // 曜日ヘッダー
+    const weekDays = ['日', '月', '火', '水', '木', '金', '土'];
+    let calendarHTML = weekDays.map(day => `<div style="text-align: center; font-weight: bold; font-size: 12px; color: #666; padding: 4px;">${day}</div>`).join('');
+    
+    // 月初の空白セル
+    for (let i = 0; i < firstDay; i++) {
+      calendarHTML += '<div></div>';
+    }
+    
+    // 日付セル
+    const daysInMonth = 31;
+    for (let day = 1; day <= daysInMonth; day++) {
+      const dateString = `2025-07-${day.toString().padStart(2, '0')}`;
+      const isAvailable = (day === 26 || day === 27);
+      const dateInfo = this.availability.currentMonth.dates.find(d => d.date === dateString);
+      
+      let statusText = '-';
+      let bgColor = '#f5f5f5';
+      let textColor = '#9e9e9e';
+      
+      if (isAvailable && dateInfo) {
+        const availableSlots = dateInfo.slots - dateInfo.booked;
+        if (availableSlots === 0) {
+          statusText = '満席';
+          bgColor = '#ffebee';
+          textColor = '#c62828';
+        } else if (availableSlots === 1) {
+          statusText = '残1';
+          bgColor = '#fff3e0';
+          textColor = '#e65100';
+        } else {
+          statusText = `残${availableSlots}`;
+          bgColor = '#e8f5e9';
+          textColor = '#2e7d32';
+        }
+      }
+      
+      calendarHTML += `
+        <div style="
+          padding: 6px 2px;
+          text-align: center;
+          border-radius: 4px;
+          font-size: 12px;
+          background: ${bgColor};
+          color: ${textColor};
+          ${isAvailable ? 'font-weight: bold;' : ''}
+        ">
+          <div>${day}</div>
+          <div style="font-size: 10px;">${statusText}</div>
+        </div>
+      `;
+    }
+    
     calendarWidget.innerHTML = `
       <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #333;">
-        <i class="ri-calendar-line" style="color: #8B4513;"></i> 今月の空き状況
+        <i class="ri-calendar-line" style="color: #8B4513;"></i> 7月の空き状況
       </h3>
-      <div id="availability-calendar" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px;">
-        ${this.generateCalendarHTML()}
+      <div id="availability-calendar" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;">
+        ${calendarHTML}
       </div>
       <div style="margin-top: 15px; padding: 10px; background: #fff3cd; border-radius: 6px; border: 1px solid #ffeaa7;">
         <p style="font-size: 14px; color: #856404; margin: 0;">

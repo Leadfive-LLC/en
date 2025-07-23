@@ -153,23 +153,30 @@ class CalendarPicker {
     const timeGrid = document.createElement('div');
     timeGrid.style.cssText = `
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       gap: 8px;
     `;
     
-    const times = ['10:00', '11:00', '13:00', '14:00', '15:00', '16:00'];
-    times.forEach(time => {
+    const timeSlots = [
+      { start: '10:00', end: '12:00', label: '10:00〜12:00' },
+      { start: '13:00', end: '15:00', label: '13:00〜15:00' },
+      { start: '15:30', end: '17:30', label: '15:30〜17:30' }
+    ];
+    
+    timeSlots.forEach(slot => {
       const timeButton = document.createElement('button');
       timeButton.type = 'button';
-      timeButton.textContent = time;
+      timeButton.textContent = slot.label;
       timeButton.style.cssText = `
-        padding: 8px;
+        padding: 12px 16px;
         border: 1px solid #8B4513;
         background: white;
         color: #8B4513;
         border-radius: 4px;
         cursor: pointer;
         transition: all 0.2s;
+        font-size: 14px;
+        width: 100%;
       `;
       
       timeButton.addEventListener('mouseover', () => {
@@ -184,9 +191,9 @@ class CalendarPicker {
       
       timeButton.addEventListener('click', () => {
         if (this.selectedDate) {
-          const dateTime = `${this.selectedDate}T${time}`;
+          const dateTime = `${this.selectedDate}T${slot.start}`;
           input.value = dateTime;
-          displayInput.value = this.formatDateTime(dateTime);
+          displayInput.value = `${this.formatDate(this.selectedDate)} ${slot.label}`;
           calendarPopup.style.display = 'none';
         }
       });

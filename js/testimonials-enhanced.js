@@ -138,11 +138,6 @@ class TestimonialsEnhanced {
           `).join('')}
         </div>
         
-        <!-- CTA -->
-        <div class="mt-12 text-center">
-          <p class="text-gray-600 mb-4">お客様の声をもっと見る</p>
-          <a href="#" class="text-primary hover:underline">全てのレビューを見る（127件） →</a>
-        </div>
       </div>
     `;
     

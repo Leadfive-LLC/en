@@ -208,36 +208,45 @@ transform: translateX(26px);
 <body class="bg-white text-gray-800">
 <!-- Header -->
 <header class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<div class="container mx-auto px-4 py-3">
+<div class="flex justify-between items-center">
 <div class="flex items-center">
-<h1 class="text-2xl font-['Pacifico'] text-primary">建築工房en</h1>
+<h1 class="text-xl md:text-2xl font-['Pacifico'] text-primary">建築工房en</h1>
 </div>
-<div class="hidden md:flex items-center space-x-8">
-<a href="#about" class="text-gray-700 hover:text-primary transition-colors">私たちについて</a>
-<a href="#features" class="text-gray-700 hover:text-primary transition-colors">選ばれる理由</a>
-<a href="#gallery" class="text-gray-700 hover:text-primary transition-colors">施工事例</a>
-<a href="#showroom" class="text-gray-700 hover:text-primary transition-colors">eneの家</a>
+<div class="hidden lg:flex items-center space-x-6">
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors text-sm">私たちについて</a>
+<a href="#features" class="text-gray-700 hover:text-primary transition-colors text-sm">選ばれる理由</a>
+<a href="#gallery" class="text-gray-700 hover:text-primary transition-colors text-sm">施工事例</a>
+<a href="#showroom" class="text-gray-700 hover:text-primary transition-colors text-sm">eneの家</a>
 </div>
 <div class="text-right">
-<p class="text-primary font-bold text-xl">072-482-2000</p>
-<p class="text-xs text-gray-500">営業時間: 9:00-18:00</p>
+<a href="tel:072-482-2000" class="text-primary font-bold text-lg md:text-xl">072-482-2000</a>
+<p class="text-xs text-gray-500 hidden sm:block">営業時間: 9:00-18:00</p>
+</div>
+</div>
+<!-- モバイルメニューボタン -->
+<div class="lg:hidden mt-3 flex justify-center space-x-4 border-t pt-3">
+<a href="#about" class="text-gray-700 text-xs">会社案内</a>
+<a href="#gallery" class="text-gray-700 text-xs">施工事例</a>
+<a href="#showroom" class="text-gray-700 text-xs">eneの家</a>
+<a href="#reserve" class="text-primary font-bold text-xs">予約</a>
 </div>
 </div>
 </header>
 
 <!-- Hero Section -->
-<section class="w-full h-screen relative mt-16" style="background-image: url('https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/6e8de4b2663b82333acb16a77d9123df.jfif'); background-size: cover; background-position: center;">
+<section class="w-full min-h-screen relative mt-20 md:mt-16" style="background-image: url('images/gallery/795260D1-051F-4728-A65E-A193A38354EF.JPEG'); background-size: cover; background-position: center;">
 <div class="absolute inset-0 hero-overlay"></div>
-<div class="container mx-auto px-4 h-full flex items-center">
-<div class="w-full md:w-1/2 z-10">
-<div class="bg-white bg-opacity-0 p-6 rounded-lg">
-<h1 class="text-3xl md:text-5xl font-bold text-primary mb-4">建築のプロも認める<br />上質な木の家づくり</h1>
-<p class="text-xl md:text-2xl mb-6">7月26日(土)・27日(日) 限定体験会</p>
-<div class="bg-red-100 text-red-800 px-4 py-2 rounded-lg inline-block mb-8">
-<p class="font-bold">完全予約制 1日3組限定</p>
-<p class="text-sm">残り枠わずか！お早めにご予約ください</p>
+<div class="container mx-auto px-4 h-full flex items-center py-20">
+<div class="w-full lg:w-2/3 z-10">
+<div class="bg-white bg-opacity-0 p-4 md:p-6 rounded-lg">
+<h1 class="text-2xl sm:text-3xl md:text-5xl font-bold text-primary mb-4">建築のプロも認める<br />上質な木の家づくり</h1>
+<p class="text-lg sm:text-xl md:text-2xl mb-4 md:mb-6">7月26日(土)・27日(日) 限定体験会</p>
+<div class="bg-red-100 text-red-800 px-3 py-2 md:px-4 rounded-lg inline-block mb-6 md:mb-8">
+<p class="font-bold text-sm md:text-base">完全予約制 1日3組限定</p>
+<p class="text-xs md:text-sm">残り枠わずか！お早めにご予約ください</p>
 </div>
-<a href="#reserve" class="bg-primary text-white px-8 py-4 rounded-button font-bold inline-block shadow-lg hover:bg-opacity-90 transition-all whitespace-nowrap cta-button">体験会を予約する（所要1分）</a>
+<a href="#reserve" class="bg-primary text-white px-6 py-3 md:px-8 md:py-4 rounded-button font-bold inline-block shadow-lg hover:bg-opacity-90 transition-all whitespace-nowrap cta-button text-sm md:text-base">体験会を予約する（所要1分）</a>
 </div>
 </div>
 </div>
@@ -442,65 +451,115 @@ transform: translateX(26px);
 </section>
 
 <!-- eneの家 ショーホーム Section -->
-<section id="showroom" class="py-16 bg-primary text-white">
+<section id="showroom" class="py-12 md:py-16 bg-white">
 <div class="container mx-auto px-4">
-<h2 class="section-title text-3xl font-bold text-center text-white">eneの家 体験型ショーホーム</h2>
-<div class="mt-12 grid md:grid-cols-2 gap-12 items-center">
-<div>
-<h3 class="text-2xl font-bold mb-6">実際の暮らしを体感できる、特別な空間</h3>
-<p class="text-lg mb-6">「eneの家」は、建築工房enが手がけた体験型ショーホームです。単なる展示場ではなく、実際の住まいとして機能する空間で、本物の木の家での暮らしを体感いただけます。</p>
+<h2 class="section-title text-2xl md:text-3xl font-bold text-center">eneの家 体験型ショーホーム</h2>
+<p class="text-center text-gray-600 mt-4 mb-8 md:mb-12">吉野の木と暮らす、本物の心地よさを体感</p>
+
+<!-- ギャラリー形式の画像表示 -->
+<div class="mb-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div class="relative h-64 md:h-96 overflow-hidden rounded-lg shadow-lg">
+<img src="images/gallery/795260D1-051F-4728-A65E-A193A38354EF.JPEG" alt="eneの家 吹き抜けリビング" class="w-full h-full object-cover">
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+<h4 class="text-white font-bold">開放的な吹き抜けリビング</h4>
+<p class="text-white text-sm opacity-90">大開口が生む光と風の流れ</p>
+</div>
+</div>
+<div class="relative h-64 md:h-96 overflow-hidden rounded-lg shadow-lg">
+<img src="images/gallery/37DB7386-CC0F-4190-AEE5-AF059E0777AF.JPEG" alt="eneの家 竹林ビュー" class="w-full h-full object-cover">
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+<h4 class="text-white font-bold">竹林を望む落ち着いた空間</h4>
+<p class="text-white text-sm opacity-90">自然と調和する住まい</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="relative h-32 md:h-48 overflow-hidden rounded-lg shadow">
+<img src="images/gallery/0DF12F13-9063-4314-9CDA-516BD52A7E96.JPEG" alt="eneの家 キッチン" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+</div>
+<div class="relative h-32 md:h-48 overflow-hidden rounded-lg shadow">
+<img src="images/gallery/22615E7C-9297-43B9-AFE2-9522E24D91AF.JPEG" alt="eneの家 和室" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+</div>
+<div class="relative h-32 md:h-48 overflow-hidden rounded-lg shadow">
+<img src="images/gallery/309DAF74-4045-4B08-BC0A-6E8655516949.JPEG" alt="eneの家 階段" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+</div>
+<div class="relative h-32 md:h-48 overflow-hidden rounded-lg shadow">
+<img src="images/gallery/4183FF75-654B-4D71-A09F-2FDADAF6FFCF.JPEG" alt="eneの家 内装" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+</div>
+</div>
+</div>
+
+<!-- 特徴とメリット -->
+<div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+<div class="order-2 md:order-1">
+<h3 class="text-xl md:text-2xl font-bold mb-6">実際の暮らしを体感できる、特別な空間</h3>
+<p class="text-base md:text-lg mb-6 text-gray-700">「eneの家」は、建築工房enが手がけた体験型ショーホームです。単なる展示場ではなく、実際の住まいとして機能する空間で、本物の木の家での暮らしを体感いただけます。</p>
 <div class="space-y-4 mb-8">
 <div class="flex items-start">
-<div class="bg-white text-primary rounded-full p-2 mr-4 flex-shrink-0">
-<i class="text-xl">✓</i>
+<div class="bg-primary text-white rounded-full p-2 mr-4 flex-shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+</svg>
 </div>
 <div>
 <h4 class="font-bold mb-1">実際の生活空間を体験</h4>
-<p class="text-sm opacity-90">キッチンやバスルームなど、すべての設備が実際に使用可能。暮らしのイメージが具体的に描けます。</p>
+<p class="text-sm text-gray-600">キッチンやバスルームなど、すべての設備が実際に使用可能。暮らしのイメージが具体的に描けます。</p>
 </div>
 </div>
 <div class="flex items-start">
-<div class="bg-white text-primary rounded-full p-2 mr-4 flex-shrink-0">
-<i class="text-xl">✓</i>
+<div class="bg-primary text-white rounded-full p-2 mr-4 flex-shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+</svg>
 </div>
 <div>
 <h4 class="font-bold mb-1">無垢材の心地よさを実感</h4>
-<p class="text-sm opacity-90">吉野杉・吉野檜の香り、足触り、温もりを五感で感じていただけます。</p>
+<p class="text-sm text-gray-600">吉野杉・吉野檜の香り、足触り、温もりを五感で感じていただけます。</p>
 </div>
 </div>
 <div class="flex items-start">
-<div class="bg-white text-primary rounded-full p-2 mr-4 flex-shrink-0">
-<i class="text-xl">✓</i>
+<div class="bg-primary text-white rounded-full p-2 mr-4 flex-shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+</svg>
 </div>
 <div>
 <h4 class="font-bold mb-1">プライベート見学</h4>
-<p class="text-sm opacity-90">完全予約制で、ゆっくりとご家族だけでご見学いただけます。</p>
+<p class="text-sm text-gray-600">完全予約制で、ゆっくりとご家族だけでご見学いただけます。</p>
 </div>
 </div>
 </div>
-<div class="bg-white bg-opacity-20 p-6 rounded-lg">
-<h4 class="text-xl font-bold mb-3">7月限定特典</h4>
-<ul class="space-y-2">
-<li class="flex items-center">
-<span class="mr-2">🎁</span>
-<span>ご見学者全員に「木の家づくりガイドブック」プレゼント</span>
+</div>
+<div class="order-1 md:order-2">
+<div class="bg-primary text-white p-6 md:p-8 rounded-lg shadow-xl">
+<h4 class="text-xl md:text-2xl font-bold mb-4">7月限定特典</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<span class="mr-3 text-xl">🎁</span>
+<div>
+<p class="font-bold">木の家づくりガイドブック</p>
+<p class="text-sm opacity-90">ご見学者全員にプレゼント</p>
+</div>
 </li>
-<li class="flex items-center">
-<span class="mr-2">☕</span>
-<span>無垢材テーブルでのカフェタイム付き</span>
+<li class="flex items-start">
+<span class="mr-3 text-xl">☕</span>
+<div>
+<p class="font-bold">カフェタイム付き</p>
+<p class="text-sm opacity-90">無垢材テーブルでゆったりと</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="mr-3 text-xl">📐</span>
+<div>
+<p class="font-bold">プロのアドバイス</p>
+<p class="text-sm opacity-90">家づくりの疑問にお答えします</p>
+</div>
 </li>
 </ul>
-</div>
-</div>
-<div>
-<div class="grid grid-cols-2 gap-4">
-<img src="images/gallery/795260D1-051F-4728-A65E-A193A38354EF.JPEG" alt="エネの家 リビング" class="rounded-lg shadow-lg">
-<img src="images/gallery/22615E7C-9297-43B9-AFE2-9522E24D91AF.JPEG" alt="エネの家 和室" class="rounded-lg shadow-lg">
-<img src="images/gallery/0DF12F13-9063-4314-9CDA-516BD52A7E96.JPEG" alt="エネの家 キッチン" class="rounded-lg shadow-lg">
-<img src="images/gallery/309DAF74-4045-4B08-BC0A-6E8655516949.JPEG" alt="エネの家 階段" class="rounded-lg shadow-lg">
-</div>
 <div class="mt-6 text-center">
-<a href="#reserve" class="bg-white text-primary px-8 py-4 rounded-button font-bold inline-block shadow-lg hover:bg-opacity-90 transition-all">eneの家を体験する</a>
+<a href="#reserve" class="bg-white text-primary px-6 py-3 md:px-8 md:py-4 rounded-button font-bold inline-block shadow-lg hover:bg-opacity-90 transition-all">eneの家を体験する</a>
+</div>
 </div>
 </div>
 </div>

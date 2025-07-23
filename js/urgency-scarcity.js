@@ -7,21 +7,17 @@ class UrgencyScarcity {
     // 仮の空き状況データ（実際はAPIから取得）
     this.availability = {
       currentMonth: {
-        totalSlots: 12,
-        bookedSlots: 9,
+        totalSlots: 6, // 7月26日と27日、各3組ずつ
+        bookedSlots: 3,
         dates: [
-          { date: '2024-07-27', slots: 3, booked: 2 },
-          { date: '2024-07-28', slots: 3, booked: 3 },
-          { date: '2024-07-29', slots: 3, booked: 3 },
-          { date: '2024-07-30', slots: 3, booked: 1 }
+          { date: '2025-07-26', slots: 3, booked: 1 },
+          { date: '2025-07-27', slots: 3, booked: 2 }
         ]
       },
       recentBookings: [
-        { time: '2時間前', location: '大阪市' },
-        { time: '5時間前', location: '堺市' },
-        { time: '昨日', location: '豊中市' }
+        { time: '昨日', location: '堺市' }
       ],
-      viewingNow: Math.floor(Math.random() * 5) + 3
+      viewingNow: Math.floor(Math.random() * 3) + 2
     };
     
     this.messages = {
@@ -380,7 +376,11 @@ class UrgencyScarcity {
    * ランダムな予約通知を表示（デモ用）
    */
   showRandomBookingNotification() {
-    const locations = ['大阪市', '堺市', '豊中市', '枚方市', '吹田市'];
+    // 一度だけ表示するためのフラグをローカルストレージで管理
+    const notificationShownKey = 'en_notification_shown_' + new Date().toDateString();
+    if (localStorage.getItem(notificationShownKey)) {
+      return; // 今日既に表示済みならスキップ
+    }
     
     const showNotification = () => {
       const notification = document.createElement('div');
@@ -402,11 +402,11 @@ class UrgencyScarcity {
         <div style="display: flex; align-items: center; gap: 15px;">
           <i class="ri-check-line" style="color: #28a745; font-size: 24px;"></i>
           <div>
-            <div style="font-weight: bold; color: #333;">新しいご予約</div>
+            <div style="font-weight: bold; color: #333;">ご予約が入りました</div>
             <div style="font-size: 14px; color: #666; margin-top: 4px;">
-              ${locations[Math.floor(Math.random() * locations.length)]}の方が体験会を予約されました
+              昨日、堺市のT様が体験会を予約されました
             </div>
-            <div style="font-size: 12px; color: #999; margin-top: 2px;">たった今</div>
+            <div style="font-size: 12px; color: #999; margin-top: 2px;">残り枠わずかです</div>
           </div>
         </div>
       `;
@@ -424,17 +424,15 @@ class UrgencyScarcity {
           notification.remove();
         }, 500);
       }, 5000);
+      
+      // 表示済みフラグを設定
+      localStorage.setItem(notificationShownKey, 'true');
     };
     
-    // 初回は30秒後、その後は60-120秒のランダム間隔
+    // 10秒後に一度だけ表示
     setTimeout(() => {
       showNotification();
-      setInterval(() => {
-        if (Math.random() > 0.5) { // 50%の確率で表示
-          showNotification();
-        }
-      }, 60000 + Math.random() * 60000);
-    }, 30000);
+    }, 10000);
   }
 
   /**

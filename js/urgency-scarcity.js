@@ -290,37 +290,40 @@ class UrgencyScarcity {
   }
 
   /**
-   * 最近の予約情報を追加
+   * 最近の予約情報を追加（無効化）
    */
   addRecentBookings(container) {
-    const bookingsWidget = document.createElement('div');
-    bookingsWidget.className = 'recent-bookings';
-    bookingsWidget.style.cssText = `
-      background: #f8f9fa;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 20px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    `;
+    // 最近のご予約機能を無効化
+    return;
     
-    bookingsWidget.innerHTML = `
-      <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #333;">
-        <i class="ri-user-add-line" style="color: #28a745;"></i> 最近のご予約
-      </h4>
-      <div style="space-y-2;">
-        ${this.availability.recentBookings.map(booking => `
-          <div style="display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
-            <i class="ri-map-pin-line" style="color: #666;"></i>
-            <span style="font-size: 14px;">${booking.location}の方が${booking.time}に予約されました</span>
-          </div>
-        `).join('')}
-      </div>
-    `;
+    // const bookingsWidget = document.createElement('div');
+    // bookingsWidget.className = 'recent-bookings';
+    // bookingsWidget.style.cssText = `
+    //   background: #f8f9fa;
+    //   padding: 15px;
+    //   border-radius: 8px;
+    //   margin-top: 20px;
+    //   max-width: 600px;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    // `;
     
-    container.appendChild(bookingsWidget);
-    this.elements.push(bookingsWidget);
+    // bookingsWidget.innerHTML = `
+    //   <h4 style="font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #333;">
+    //     <i class="ri-user-add-line" style="color: #28a745;"></i> 最近のご予約
+    //   </h4>
+    //   <div style="space-y-2;">
+    //     ${this.availability.recentBookings.map(booking => `
+    //       <div style="display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+    //         <i class="ri-map-pin-line" style="color: #666;"></i>
+    //         <span style="font-size: 14px;">${booking.location}の方が${booking.time}に予約されました</span>
+    //       </div>
+    //     `).join('')}
+    //   </div>
+    // `;
+    
+    // container.appendChild(bookingsWidget);
+    // this.elements.push(bookingsWidget);
   }
 
   /**

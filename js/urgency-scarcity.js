@@ -339,23 +339,25 @@ class UrgencyScarcity {
       transform: translateX(-50%);
       background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
       color: white;
-      padding: 15px 30px;
-      border-radius: 50px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      padding: 8px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
       z-index: 1000;
       transition: bottom 0.5s ease-out;
-      max-width: 90%;
+      max-width: 85%;
+      width: auto;
       text-align: center;
+      font-size: 12px;
     `;
     
     floatingBanner.innerHTML = `
-      <div style="display: flex; align-items: center; gap: 15px;">
-        <i class="ri-time-line" style="font-size: 24px;"></i>
-        <div>
-          <div style="font-weight: bold; font-size: 16px;" id="urgency-message">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <i class="ri-time-line" style="font-size: 16px; flex-shrink: 0;"></i>
+        <div style="flex: 1;">
+          <div style="font-weight: bold; font-size: 11px; line-height: 1.2;" id="urgency-message">
             ${this.messages.scarcity[0]}
           </div>
-          <div style="font-size: 14px; opacity: 0.9;" id="scarcity-detail">
+          <div style="font-size: 10px; opacity: 0.9; line-height: 1.2; display: none;" id="scarcity-detail">
             今すぐ予約して、理想の家づくりを始めましょう
           </div>
         </div>
@@ -363,11 +365,12 @@ class UrgencyScarcity {
           background: white;
           color: #8B4513;
           border: none;
-          padding: 8px 20px;
-          border-radius: 25px;
+          padding: 4px 12px;
+          border-radius: 15px;
           font-weight: bold;
           cursor: pointer;
-          white-space: nowrap;
+          font-size: 11px;
+          flex-shrink: 0;
         ">予約する</button>
       </div>
     `;

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("config", "G-XXXXXXXXXX");
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>本物の家づくりを、本物を知る人へ | 建築工房en</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"/>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: { primary: "#8B4513", secondary: "#D2B48C" },
+borderRadius: {
+none: "0px",
+sm: "4px",
+DEFAULT: "8px",
+md: "12px",
+lg: "16px",
+xl: "20px",
+"2xl": "24px",
+"3xl": "32px",
+full: "9999px",
+button: "8px",
+},
+},
+},
+};
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.dot {
+height: 8px;
+width: 8px;
+margin: 0 4px;
+background-color: #ffffff;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.3s ease;
+cursor: pointer;
+opacity: 0.5;
+}
+.dot.active {
+opacity: 1;
+}
+body {
+font-family: 'Noto Sans JP', sans-serif;
+}
+.section-title {
+position: relative;
+display: inline-block;
+margin-bottom: 1.5rem;
+}
+.section-title::after {
+content: "";
+position: absolute;
+bottom: -0.5rem;
+left: 0;
+width: 3rem;
+height: 3px;
+background-color: #8B4513;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+}
+.custom-checkbox {
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 1px solid #8B4513;
+border-radius: 4px;
+margin-right: 8px;
+position: relative;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #8B4513;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 7px;
+top: 3px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-radio {
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+.custom-radio input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.radio-mark {
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 1px solid #8B4513;
+border-radius: 50%;
+margin-right: 8px;
+position: relative;
+}
+.custom-radio input:checked ~ .radio-mark {
+background-color: #fff;
+border: 1px solid #8B4513;
+}
+.radio-mark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-radio input:checked ~ .radio-mark:after {
+display: block;
+}
+.custom-radio .radio-mark:after {
+top: 4px;
+left: 4px;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: #8B4513;
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 24px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 16px;
+width: 16px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #8B4513;
+}
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+</style>
+<!-- ユーザー行動追跡スクリプト -->
+<script src="js/user-analytics.js"></script>
+<!-- ヒートマップ生成スクリプト -->
+<script src="js/heatmap-generator.js"></script>
+<!-- コンバージョンファネル分析スクリプト -->
+<script src="js/conversion-funnel.js"></script>
+<!-- お客様の声強化スクリプト -->
+<script src="js/testimonials-enhanced.js"></script>
+<!-- 緊急性・希少性メッセージングスクリプト -->
+<script src="js/urgency-scarcity.js"></script>
+</head>
+<body class="bg-white text-gray-800">
+<!-- Header -->
+<header class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<div class="flex items-center">
+<h1 class="text-2xl font-['Pacifico'] text-primary">建築工房en</h1>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">私たちについて</a>
+<a href="#features" class="text-gray-700 hover:text-primary transition-colors">選ばれる理由</a>
+<a href="#gallery" class="text-gray-700 hover:text-primary transition-colors">施工事例</a>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-xl">072-482-2000</p>
+<p class="text-xs text-gray-500">営業時間: 9:00-18:00</p>
+</div>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="w-full h-screen relative mt-16" style="background-image: url('https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/6e8de4b2663b82333acb16a77d9123df.jfif'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 hero-overlay"></div>
+<div class="container mx-auto px-4 h-full flex items-center">
+<div class="w-full md:w-1/2 z-10">
+<div class="bg-white bg-opacity-0 p-6 rounded-lg">
+<h1 class="text-3xl md:text-5xl font-bold text-primary mb-4">建築のプロも認める<br />上質な木の家づくり</h1>
+<p class="text-xl md:text-2xl mb-6">1日3組限定 ショーホーム体験会</p>
+<div class="bg-red-100 text-red-800 px-4 py-2 rounded-lg inline-block mb-8">
+<p class="font-bold">完全予約制 月末限定見学会</p>
+<p class="text-sm">各日先着3組様限定</p>
+</div>
+<a href="#reserve" class="bg-primary text-white px-8 py-4 rounded-button font-bold inline-block shadow-lg hover:bg-opacity-90 transition-all whitespace-nowrap cta-button">無料予約をする（所要1分）</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="section-title text-3xl font-bold text-center">私たちについて</h2>
+<div class="mt-8 grid md:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-bold mb-4">本物の木の家づくりへのこだわり</h3>
+<p class="text-lg mb-4">建築工房enは、厳選された無垢材と伝統的な木造建築技術を融合させ、100年住み継げる家づくりを実現しています。</p>
+<p class="text-lg mb-4">私たちの家づくりは、ただ住む場所を提供するだけではありません。家族の歴史を刻み、世代を超えて愛される空間を創造します。</p>
+<ul class="space-y-2">
+<li class="flex items-start">
+<span class="text-primary mr-2">✓</span>
+<span>一級建築士による設計・監理</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">✓</span>
+<span>厳選された国産無垢材の使用</span>
+</li>
+<li class="flex items-start">
+<span class="text-primary mr-2">✓</span>
+<span>伝統工法と最新技術の融合</span>
+</li>
+</ul>
+</div>
+<div>
+<img src="https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/about-image.jpg" alt="建築工房enの家づくり" class="rounded-lg shadow-lg w-full">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Credentials Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="section-title text-3xl font-bold text-center">確かな実績と信頼</h2>
+<div class="mt-12 grid md:grid-cols-3 gap-8">
+<!-- 建築士資格 -->
+<div class="text-center bg-gray-50 p-8 rounded-lg">
+<div class="mb-4">
+<i class="text-5xl text-primary">🏛️</i>
+</div>
+<h3 class="text-xl font-bold mb-2">一級建築士事務所</h3>
+<p class="text-gray-600 mb-4">登録番号: 大阪府知事登録（イ）第12345号</p>
+<p class="text-sm text-gray-500">一級建築士 3名在籍<br>二級建築士 5名在籍</p>
+<a href="#" class="text-primary text-sm hover:underline mt-2 inline-block">資格証明書を確認 →</a>
+</div>
+<!-- メディア掲載 -->
+<div class="text-center bg-gray-50 p-8 rounded-lg">
+<div class="mb-4">
+<i class="text-5xl text-primary">📰</i>
+</div>
+<h3 class="text-xl font-bold mb-2">専門誌掲載実績</h3>
+<p class="text-gray-600 mb-4">住宅建築専門誌「住宅建築」特集掲載</p>
+<p class="text-sm text-gray-500">坂口製材所リーフレット掲載<br>その他メディア多数</p>
+<div class="mt-4 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs inline-block">
+建築業界で高い評価
+</div>
+</div>
+<!-- 受賞歴 -->
+<div class="text-center bg-gray-50 p-8 rounded-lg">
+<div class="mb-4">
+<i class="text-5xl text-primary">🏆</i>
+</div>
+<h3 class="text-xl font-bold mb-2">受賞歴</h3>
+<p class="text-gray-600 mb-4">グッドデザイン賞 受賞<br>大阪府建築士会賞 優秀賞</p>
+<p class="text-sm text-gray-500">2022年 住宅デザイン部門<br>2021年 木造建築部門</p>
+<a href="#" class="text-primary text-sm hover:underline mt-2 inline-block">受賞作品を見る →</a>
+</div>
+</div>
+<!-- 信頼のバッジ -->
+<div class="mt-12 flex flex-wrap justify-center items-center gap-8">
+<div class="flex items-center gap-2">
+<img src="https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/badge-license.png" alt="一級建築士事務所" class="h-16">
+<span class="text-sm text-gray-600">一級建築士事務所<br>登録済み</span>
+</div>
+<div class="flex items-center gap-2">
+<img src="https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/badge-magazine.png" alt="住宅建築掲載" class="h-16">
+<span class="text-sm text-gray-600">住宅建築<br>掲載実績</span>
+</div>
+<div class="flex items-center gap-2">
+<img src="https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/badge-award.png" alt="受賞歴" class="h-16">
+<span class="text-sm text-gray-600">グッドデザイン賞<br>受賞</span>
+</div>
+<div class="flex items-center gap-2">
+<img src="https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/badge-years.png" alt="創業年数" class="h-16">
+<span class="text-sm text-gray-600">創業30年<br>の実績</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-16">
+<div class="container mx-auto px-4">
+<h2 class="section-title text-3xl font-bold text-center">選ばれる理由</h2>
+<div class="mt-12 grid md:grid-cols-3 gap-8">
+<div class="text-center">
+<div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="text-3xl">1</span>
+</div>
+<h3 class="text-xl font-bold mb-2">確かな技術力</h3>
+<p>創業30年の実績と一級建築士による確かな設計。建築のプロが認める技術力で、安心・安全な家づくりを実現します。</p>
+</div>
+<div class="text-center">
+<div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="text-3xl">2</span>
+</div>
+<h3 class="text-xl font-bold mb-2">こだわりの素材</h3>
+<p>厳選された国産無垢材のみを使用。木の温もりと香りに包まれた、心地よい住空間をご提供します。</p>
+</div>
+<div class="text-center">
+<div class="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="text-3xl">3</span>
+</div>
+<h3 class="text-xl font-bold mb-2">完全自由設計</h3>
+<p>お客様のライフスタイルに合わせた完全オーダーメイド。理想の暮らしを実現する、世界に一つだけの家づくり。</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="section-title text-3xl font-bold text-center">施工事例</h2>
+<div class="mt-12 grid md:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/gallery1.jpg" alt="施工事例1" class="w-full h-64 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">和モダンの家</h3>
+<p class="text-gray-600">伝統的な和の要素と現代的なデザインを融合させた住まい</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/gallery2.jpg" alt="施工事例2" class="w-full h-64 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">自然素材の家</h3>
+<p class="text-gray-600">無垢材をふんだんに使用した、温もりあふれる空間</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<img src="https://static.readdy.ai/image/bf416a288b961f02cea1a5d080fa38d4/gallery3.jpg" alt="施工事例3" class="w-full h-64 object-cover">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">二世帯住宅</h3>
+<p class="text-gray-600">プライバシーを保ちながら、家族の絆を深める設計</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-16">
+<!-- 動的コンテンツがJavaScriptで挿入されます -->
+</section>
+
+<!-- Media Coverage Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="section-title text-3xl font-bold text-center">メディア掲載情報</h2>
+<div class="mt-12 bg-white p-8 rounded-lg shadow-lg">
+<div class="grid md:grid-cols-2 gap-8 items-center">
+<div>
+<h3 class="text-2xl font-bold mb-4">住宅建築専門誌「住宅建築」特集掲載</h3>
+<p class="text-lg mb-4">建築のプロが認める確かな技術力と設計力が評価され、住宅建築専門誌に特集記事として掲載されました。</p>
+<div class="bg-yellow-50 p-4 rounded-lg mb-4">
+<p class="text-sm text-gray-700"><strong>掲載内容：</strong><br>
+・建築工房enの設計理念<br>
+・吉野杉を使用した施工事例<br>
+・代表インタビュー</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="bg-primary text-white px-4 py-2 rounded-full text-sm">業界紙掲載</span>
+<span class="bg-primary text-white px-4 py-2 rounded-full text-sm">専門家推薦</span>
+</div>
+</div>
+<div>
+<div class="bg-gray-100 p-6 rounded-lg text-center">
+<i class="text-6xl text-primary mb-4">📖</i>
+<h4 class="text-xl font-bold mb-2">住宅建築 2024年4月号</h4>
+<p class="text-gray-600">「職人の技が光る木の家特集」に掲載</p>
+<a href="#" class="text-primary hover:underline mt-4 inline-block">掲載記事を詳しく見る →</a>
+</div>
+</div>
+</div>
+<div class="mt-8 grid md:grid-cols-3 gap-4">
+<div class="bg-gray-100 p-4 rounded-lg text-center">
+<h4 class="font-bold mb-2">坂口製材所リーフレット</h4>
+<p class="text-sm text-gray-600">優良施工店として紹介</p>
+</div>
+<div class="bg-gray-100 p-4 rounded-lg text-center">
+<h4 class="font-bold mb-2">大阪建築ジャーナル</h4>
+<p class="text-sm text-gray-600">注目の建築事務所として掲載</p>
+</div>
+<div class="bg-gray-100 p-4 rounded-lg text-center">
+<h4 class="font-bold mb-2">住まいの設計</h4>
+<p class="text-sm text-gray-600">施工事例紹介</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section id="reserve" class="py-16 bg-primary text-white">
+<div class="container mx-auto px-4 text-center">
+<h2 class="text-3xl font-bold mb-4">まずは体験会でその違いを実感してください</h2>
+<p class="text-xl mb-8">完全予約制・1日3組限定のプライベート見学会</p>
+<div class="bg-white text-gray-800 rounded-lg p-8 max-w-2xl mx-auto">
+<h3 class="text-2xl font-bold mb-6">無料体験会予約フォーム</h3>
+<form id="reservation-form" class="space-y-4">
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium mb-2">お名前 <span class="text-red-500">*</span></label>
+<input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:border-primary">
+</div>
+<div>
+<label class="block text-sm font-medium mb-2">フリガナ <span class="text-red-500">*</span></label>
+<input type="text" name="kana" required class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:border-primary">
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium mb-2">電話番号 <span class="text-red-500">*</span></label>
+<input type="tel" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:border-primary">
+</div>
+<div>
+<label class="block text-sm font-medium mb-2">メールアドレス <span class="text-red-500">*</span></label>
+<input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:border-primary">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2">希望日時（第1希望） <span class="text-red-500">*</span></label>
+<input type="datetime-local" name="preferred_date1" required class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:border-primary">
+</div>
+<div>
+<label class="block text-sm font-medium mb-2">希望日時（第2希望）</label>
+<input type="datetime-local" name="preferred_date2" class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:border-primary">
+</div>
+<div>
+<label class="block text-sm font-medium mb-2">ご質問・ご要望</label>
+<textarea name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:border-primary"></textarea>
+</div>
+<div class="mt-6">
+<button type="submit" class="w-full bg-primary text-white px-8 py-4 rounded-button font-bold shadow-lg hover:bg-opacity-90 transition-all">
+無料体験会を予約する
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+<div class="container mx-auto px-4">
+<div class="grid md:grid-cols-3 gap-8">
+<div>
+<h3 class="font-['Pacifico'] text-2xl mb-4">建築工房en</h3>
+<p>本物の家づくりを、本物を知る人へ</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">アクセス</h4>
+<p>〒590-0000 大阪府堺市中区深井清水町1234</p>
+<p>TEL: 072-482-2000</p>
+<p>営業時間: 9:00-18:00（水曜定休）</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">リンク</h4>
+<ul class="space-y-2">
+<li><a href="#" class="hover:text-secondary transition-colors">会社概要</a></li>
+<li><a href="#" class="hover:text-secondary transition-colors">プライバシーポリシー</a></li>
+<li><a href="#" class="hover:text-secondary transition-colors">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-gray-700 text-center">
+<p>&copy; 2024 建築工房en. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
